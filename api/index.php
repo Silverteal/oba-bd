@@ -1,9 +1,9 @@
 <?php
 // I hate PHP
 
-date_default_timezone_set('Asia/Shanghai');
+date_default_timezone_set("Asia/Shanghai");
 $genTime = date("Y-m-d H:i:s");
-header('Content-type: text/plain');  
+header("Content-type: text/plain");  
 
 $load = "Error";
 $curNodes = "080808080";
@@ -23,7 +23,7 @@ $todayHit = $remote->{"hits"};
 $remote = json_decode(file_get_contents("https://bmclapi2.bangbang93.com/openbmclapi/sponsor"));
 $sponsorUrl = $remote->{"link"};
 
-header('Cache-control:public, max-age=180');
+header("Cache-control:public, max-age=180, stale-while-revalidate=120");
 ?>
 
 <Grid>
