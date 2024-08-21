@@ -27,7 +27,7 @@ header("Cache-control: public, max-age=120");
 
 ?>
 
-<Grid>
+<Grid Margin="0,0,0,4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.8*"/>
             <ColumnDefinition />
