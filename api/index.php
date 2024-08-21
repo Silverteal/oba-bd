@@ -24,7 +24,7 @@ $remote = json_decode(file_get_contents("https://bmclapi2.bangbang93.com/openbmc
 $sponsorUrl = $remote->{"link"};
 
 header("Cache-control: public, max-age=180, stale-while-revalidate=120");
-header("Cloudflare-CDN-Cache-Control: stale-if-error=31557600");
+header("Cloudflare-CDN-Cache-Control: stale-if-error=300");
 
 ?>
 
