@@ -27,7 +27,7 @@ header("Cache-control: public, max-age=120");
 
 ?>
 
-<Grid Margin="0,0,0,4">
+<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.8*"/>
             <ColumnDefinition />
@@ -37,7 +37,6 @@ header("Cache-control: public, max-age=120");
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition Height="35" />
         </Grid.RowDefinitions>
             <local:MyCard Title="OpenBMCLAPI 仪表盘 Lite" Margin="0,0,0,5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ToolTip="当前仪表盘缓存的获取时间">
                     <TextBlock Margin="25,12,20,10" HorizontalAlignment="Right">
@@ -79,16 +78,19 @@ header("Cache-control: public, max-age=120");
 
             <local:MyCard Title="主控负载" Margin="0,0,0,4" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
                 <StackPanel Margin="25,40,23,15">
+                <StackPanel Margin="0,0,0,4">
                     <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" TextWrapping="Wrap">
                         <Run Text="<?php print $load;?>" FontSize="26"/> %
                     </TextBlock>
                     <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" TextWrapping="Wrap">
                         （此处数据超过 100% 是正常现象）
                     </TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="0,4,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <local:MyButton Margin="0,0,4,0" Width="180" Height="35" Text="刷新" EventType="刷新主页" ToolTip="重新加载数据，请勿频繁点击" />
+                        <local:MyButton Margin="4,0,0,0" Width="180" Height="35" ColorType="Highlight" Text="查看赞助商信息" EventType="打开网页" EventData="<?php print $sponsorUrl?>" ToolTip="查看来自 OpenBMCLAPI 赞助商的广告" />
+                    </StackPanel>
                 </StackPanel>
             </local:MyCard>
-
-            <local:MyButton Margin="2,0,0,0" Grid.Row="4" Grid.Column="1" ColorType="Highlight" Text="查看赞助商信息" EventType="打开网页" EventData="<?php print $sponsorUrl?>" ToolTip="查看来自 OpenBMCLAPI 赞助商的广告" />
-            <local:MyButton Margin="0,0,2,0" Grid.Row="4" Grid.Column="0" Text="刷新" EventType="刷新主页" ToolTip="重新加载数据，请勿频繁点击" />
             
     </Grid>
