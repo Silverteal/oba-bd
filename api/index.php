@@ -23,7 +23,8 @@ $todayHit = $remote->{"hits"};
 $remote = json_decode(file_get_contents("https://bmclapi2.bangbang93.com/openbmclapi/sponsor"));
 $sponsorUrl = $remote->{"link"};
 
-header("Cache-control:public, max-age=180, stale-while-revalidate=120");
+header("Vercel-CDN-Cache-Control: public, max-age=180, stale-while-revalidate=120");
+header("Cloudflare-CDN-Cache-Control: public, max-age=180, stale-while-revalidate=120, stale-if-error=31557600");
 ?>
 
 <Grid>
