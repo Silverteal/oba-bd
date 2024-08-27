@@ -42,6 +42,9 @@ header("Cache-control: public, max-age=120");
                     <TextBlock Margin="25,12,20,10" HorizontalAlignment="Right">
                         <?php print $genTime?> (UTC+8)
                     </TextBlock>
+                    <StackPanel Margin="15,35,15,10">
+                        <local:MyHint IsWarn="False" Text="新闻：OpenBMCLAPI 仪表盘 JS 版即将加入预设"/>
+                    </StackPanel>
             </local:MyCard>
 
             <local:MyCard Title="在线节点" Margin="0,0,2,4" Grid.Row="1" Grid.Column="0">
