@@ -78,13 +78,13 @@ header("Cache-control: public, max-age=120");
 
             <local:MyCard Title="主控负载" Margin="0,0,0,4" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
                 <StackPanel Margin="25,40,23,15">
-                <StackPanel Margin="0,0,0,4">
-                    <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" TextWrapping="Wrap">
-                        <Run Text="<?php print $load;?>" FontSize="26"/> %
-                    </TextBlock>
-                    <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" TextWrapping="Wrap">
-                        （此处数据超过 100% 是正常现象）
-                    </TextBlock>
+                    <StackPanel Margin="0,0,0,4">
+                        <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Run Text="<?php print $load;?>" FontSize="26"/> %
+                        </TextBlock>
+                        <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            （此处数据超过 100% 是正常现象）
+                        </TextBlock>
                     </StackPanel>
                     <StackPanel Margin="0,4,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
                         <local:MyButton Margin="0,0,4,0" Width="180" Height="35" Text="刷新" EventType="刷新主页" ToolTip="重新加载数据，请勿频繁点击" />
